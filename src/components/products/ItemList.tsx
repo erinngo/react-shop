@@ -20,7 +20,7 @@ interface Props {
 const ItemList = ({ category, limit }: Props): JSX.Element => {
   const items = useRecoilValue(productsList);
   const [loading, setLoading] = useState(true);
-  const [displayedItems, setDisplayedItems] = useState([]);
+  const [displayedItems, setDisplayedItems] = useState<IProduct[]>([]);
 
   // useEffect(() => {
   //   const filteredItems = items.filter((item) => category === Category[item.category]);

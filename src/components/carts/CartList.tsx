@@ -32,7 +32,7 @@ const CartList = (): JSX.Element => {
       ) : (
         cartList.map((item) => (
           <div key={item.id} className="flex gap-6 items-center border-b pb-6">
-            <img src={item.image} alt={item.title} className="w-28 h-28 object-cover" />
+            <img src={item.image} alt={item.title} className="w-28 h-28 object-contain" />
 
             <div className="flex-1">
               <h2 className="text-lg font-semibold">{item.title}</h2>

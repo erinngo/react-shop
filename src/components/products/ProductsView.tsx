@@ -54,7 +54,10 @@ const ProductsView = () => {
             <h3 className="text-2xl font-semibold mt-4">${thisProduct.price}</h3>
 
             <div className="card-actions justify-start mt-4">
-              <button className="btn btn-primary" onClick={() => setCart(addToCart(cart, thisProduct.id.toString()))}>
+              <button
+                className="btn btn-primary"
+                onClick={() => setCart(addToCart(cart, thisProduct.id.toString(), "increase"))}
+              >
                 장바구니에 담기
               </button>
               <button className="btn btn-outline" onClick={() => navigate("/cart")}>
