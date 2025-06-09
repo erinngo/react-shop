@@ -6,6 +6,7 @@ import Theme from "./Theme";
 import { useRecoilValue } from "recoil";
 import { cartListSelector } from "../../store/cart";
 import SearchBox from "./SearchBox";
+import { ShoppingBagIcon, Bars3Icon } from "@heroicons/react/24/outline";
 
 export default function Nav(): JSX.Element {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +20,7 @@ export default function Nav(): JSX.Element {
         {/* 좌측: 햄버거 + 로고 */}
         <div className="flex items-center ">
           <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden">
-            <FaBars />
+            <Bars3Icon className="w-6 h-6" />
           </button>
           <Link to={"/"} className="ml-2 lg:ml-0">
             <h1 className="text-xl font-bold">React Shop</h1>
@@ -41,25 +42,31 @@ export default function Nav(): JSX.Element {
           </ul>
         </div>
 
-        {/* 우측: 검색바 + 장바구니 */}
-        <div className="flex items-center space-x-3">
-          <Theme />
+        {/* 우측: 검색바 + 장바구니 ---- 스타일을 위해 하위요소 3개 모두 div로 감쌈 */}
+        <div className="flex items-center space-x-4">
+          <div>
+            <Theme />
+          </div>
           {/* //TODO: 검색창 + 드롭다운  */}
+
           <div>
             <SearchBox />
           </div>
+
           {/* <input
             className="px-4 py-1 rounded-md hidden sm:block light: bg-gray-300 dark:bg-gray-600"
             placeholder="search..."
           /> */}
-          <Link to={"/cart"}>
-            <div className="relative">
-              <FaShoppingCart size={20} />
-              <span className="absolute -top-2 -right-2 text-xs bg-red-500 w-5 h-5 flex items-center justify-center rounded-full">
-                {totalCount}
-              </span>
-            </div>
-          </Link>
+          <div>
+            <Link to={"/cart"}>
+              <div className="relative">
+                <ShoppingBagIcon className="w-6 h-6" />
+                <span className="absolute -top-2 -right-2 text-xs bg-red-500 w-5 h-5 flex items-center justify-center rounded-full">
+                  {totalCount}
+                </span>
+              </div>
+            </Link>
+          </div>
         </div>
       </nav>
 

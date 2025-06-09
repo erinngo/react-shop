@@ -2,7 +2,8 @@ import { useRecoilValue } from "recoil";
 import { productsList } from "../../store/products";
 import { useState, useEffect, useMemo, useRef } from "react";
 import { useNavigate } from "react-router";
-import { HiOutlineSearch } from "react-icons/hi";
+// import { HiOutlineSearch } from "react-icons/hi";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 const SearchBox = () => {
   const [query, setQuery] = useState("");
   const productList = useRecoilValue(productsList);
@@ -73,7 +74,7 @@ const SearchBox = () => {
     <>
       {/* 모바일 검색 버튼 */}
       <button className="sm:hidden" onClick={() => setSearchOpen((prev) => !prev)}>
-        <HiOutlineSearch size={22} />
+        <MagnifyingGlassIcon className="w-6 h-6" />
       </button>
 
       {/* pc 검색창 */}
