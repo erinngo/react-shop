@@ -1,7 +1,7 @@
 module.exports = {
   mode: "jit",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class",
+  darkMode: "class", // class 지정할때, dark: 프리픽스 활성화
   theme: {
     screens: {
       sm: "480px",
